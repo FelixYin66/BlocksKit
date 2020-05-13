@@ -13,7 +13,7 @@
 	if (!block) return;
 	
 	UITapGestureRecognizer *gesture = [UITapGestureRecognizer bk_recognizerWithHandler:^(UIGestureRecognizer *sender, UIGestureRecognizerState state, CGPoint location) {
-		if (state == UIGestureRecognizerStateRecognized) block();
+		if (state == UIGestureRecognizerStateRecognized || state == UIGestureRecognizerStatePossible) block();
 	}];
 	
 	gesture.numberOfTouchesRequired = numberOfTouches;
